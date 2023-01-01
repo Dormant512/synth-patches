@@ -1,0 +1,66 @@
+\documentclass[11pt, a4paper]{article}
+%\usepackage{cmap}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}
+\usepackage[left=15mm, top=5mm, right=15mm, bottom=5mm, includehead, includefoot]{geometry}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+%\usepackage{indentfirst}
+\usepackage{fontspec}
+\usepackage{titlesec}
+\usepackage{polyglossia}
+\usepackage{wallpaper}
+\usepackage{wasysym}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{hyperref}
+\graphicspath{{./visuals/}}
+
+%\pretolerance=10000
+%\tolerance=2000
+%\emergencystretch=10pt
+
+\setlength\columnsep{30pt}
+
+\setmainlanguage{english}
+\setotherlanguage{russian}
+\setkeys{russian}{babelshorthands=true}
+%\titleformat*{\section}{\Large\sectionfont}
+
+\definecolor{leftcol}{HTML}{F1F1F1}
+
+\newcommand{\incfig}[1]{%
+    \def\svgwidth{\columnwidth}
+    \import{./visuals/}{#1.pdf_tex}
+}
+
+\titleformat{\section}
+  {\normalfont\Large}{\thesection}{0em}{}[{\titlerule[0.8pt]}]
+
+
+
+
+
+
+
+\begin{document}
+
+\begin{figure}[!h]
+\centering
+\incfig{korg-monologue-panel}
+\incfig{korg-monologue-panel}
+\incfig{korg-monologue-panel}
+\incfig{korg-monologue-panel}
+\incfig{korg-monologue-panel}
+\end{figure}
+
+\end{document}
