@@ -22,7 +22,9 @@
 \usepackage{xifthen}
 \usepackage{pdfpages}
 \usepackage{transparent}
+\usepackage{listofitems}
 \usepackage{hyperref}
+\usepackage[percent]{overpic}
 \graphicspath{{./visuals/}}
 
 %\pretolerance=10000
@@ -38,29 +40,58 @@
 
 \definecolor{leftcol}{HTML}{F1F1F1}
 
-\newcommand{\incfig}[1]{%
-    \def\svgwidth{\columnwidth}
-    \import{./visuals/}{#1.pdf_tex}
-}
-
 \titleformat{\section}
   {\normalfont\Large}{\thesection}{0em}{}[{\titlerule[0.8pt]}]
 
+\newenvironment{synth}[1]{
+\setsepchar{, }
+\readlist\args{#1}
 
+\begin{center}
+\begin{overpic}[width=\textwidth]{korg-monologue-panel.pdf}
+\put (42.5,22.5) {\Large \args[1]}
 
+\put (2,15) {\tiny \args[2]}
+\put (2,14) {\tiny \args[3]}
+\put (2,5.2) {\args[4]}
 
+\put (12.8,15) {\args[5]}
+\put (11.7,5.2) {\args[6]}
 
+\put (19.9,15) {\footnotesize \args[7]}
+\put (31.1,15.2) {\tiny \args[8]}
+\put (20.5,5.2) {\args[9]}
+\put (25.4,5.2) {\args[10]}
+\put (31.4,5.2) {\args[11]}
 
+\put (41.3,15) {\args[12]}
+\put (41.3,5.2) {\args[13]}
+
+\put (51.2,15) {\args[14]}
+\put (51.2,5.2) {\args[15]}
+
+\put (59.7,15) {\args[16]}
+\put (65.9,15) {\args[17]}
+\put (75.8,15) {\args[18]}
+\put (85.5,15) {\args[19]}
+\put (93.6,15) {\args[20]}
+
+\put (59.7,5.2) {\args[21]}
+\put (66.8,5.2) {\args[22]}
+\put (75.8,5.2) {\args[23]}
+\put (85.5,5.2) {\args[24]}
+\put (93.6,5.2) {\args[25]}
+\end{overpic}
+\end{center}
+
+\noindent
+\textbf{Notes:}
+}
 
 \begin{document}
 
-\begin{figure}[!h]
-\centering
-\incfig{korg-monologue-panel}
-\incfig{korg-monologue-panel}
-\incfig{korg-monologue-panel}
-\incfig{korg-monologue-panel}
-\incfig{korg-monologue-panel}
-\end{figure}
+\begin{synth}{YN b forest, VCO 1, shape, 020, 2, 010, +2, +1000, 2, 3, 120, 170, 155, 098, 069, 1, 005, 100, 020, 3, 2, 3, 040, 090, 2}
+For achieving bell sounds VCO 1 and VCO 2 have to be...
+\end{synth}
 
 \end{document}
